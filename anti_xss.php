@@ -39,16 +39,16 @@ function antiXSS($val) {
 }
 
 foreach($_GET as $input => $value) {
-    $_GET[$input] = antiXSS(strip_tags(preg_replace('/[^A-Za-z0-9 \@\,\/\-\.\_\(\)\[\]\r\n]/', '', $value)));
+    $_GET[$input] = antiXSS(strip_tags(preg_replace('/[^A-Za-z0-9 \:\@\,\/\-\.\_\(\)\[\]\r\n]/', '', $value)));
 //echo "--".$_GET[$input]."<br>";
 }
 
 foreach($_POST as $input => $value) {
-    $_POST[$input] = antiXSS(strip_tags(preg_replace('/[^A-Za-z0-9 \@\,\/\-\.\_\(\)\[\]\r\n]/', '', $value)));
+    $_POST[$input] = antiXSS(strip_tags(preg_replace('/[^A-Za-z0-9 \:\@\,\/\-\.\_\(\)\[\]\r\n]/', '', $value)));
 //echo "--".$_POST[$input]."<br>";
 }
 
 foreach($_REQUEST as $input => $value) {
-    $_REQUEST[$input] = antiXSS(strip_tags(preg_replace('/[^A-Za-z0-9 \@\,\/\-\.\_\(\)\[\]\r\n]/', '', $value)));
+    $_REQUEST[$input] = antiXSS(strip_tags(preg_replace('/[^A-Za-z0-9 \:\@\,\/\-\.\_\(\)\[\]\r\n]/', '', $value)));
 //echo "--".$_REQUEST[$input]."<br>";
 }
